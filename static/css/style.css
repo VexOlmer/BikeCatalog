@@ -35,6 +35,7 @@ html{
     box-sizing: inherit;
 }
 
+/* Main Blocks */
 body{
     font-family: 'Lato';
     font-style: normal;
@@ -53,14 +54,14 @@ body{
 
 /* Header */
 .header{
-    background-color: #24406f;
+    background-color: #4761E8;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     width: 100%;
-    height: 80px;
+    height: 60px;
     display:inline-block;
     vertical-align:middle
 }
@@ -74,14 +75,18 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.header__logo-pic{
+    height: 60px;
+}
+.header__menu-pic{
+    height: 40px;
+}
 
 /* Nav */
-
 .nav{
     font-size: 14px;
     text-transform: uppercase;
 }
-
 .nav__link{
     color:#FFF50D;
     text-decoration: none;
@@ -89,15 +94,12 @@ body{
 
     display: inline-block;
     vertical-align: top;
-    margin: 30px;
 
     transition: color .1s linear;
 }
-
 .nav__link:hover {
     color: aqua;
 }
-
 .nav__link::after{
     content: "";
     display: block;
@@ -114,7 +116,41 @@ body{
 
     transition: opacity .1s linear;
 }
-
 .nav__link:hover:after {
     opacity: 1;
+}
+
+.navigation {
+    padding: 0;
+    margin-bottom: 10px !important;
+    z-index: 9;
+    margin-top: 30px;
+}
+.page-head {
+    display: table;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.page-title {
+    white-space: nowrap;
+    padding-right: 10px;
+    position: relative;
+}
+.h1_title, h1 {
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 500;
+    color: #000;
+    text-transform: none;
+    margin-top: 40px;
+}
+.navigation .bread, .navigation .bread * {
+    font-size: 14px !important;
+}
+.line_wide {
+    margin: 0;
+    height: 2px;
+    background: #d7d7d7;
 }
