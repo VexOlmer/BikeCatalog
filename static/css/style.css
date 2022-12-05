@@ -154,3 +154,69 @@ body{
     height: 2px;
     background: #d7d7d7;
 }
+
+/* Name Bike On see all info */
+.h1-top {
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 1200px;
+	min-width: 345px;
+	margin: 0 auto 30px auto;
+	padding: 0 10px;
+	font-family: fontL;
+	font-weight: normal;
+	font-size: 38px;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 40px;
+}
+
+/* Main Info Bike */
+.main__info__bike{
+	display: block;
+	padding: 0 10px;
+}
+
+.photo__bike{
+	display: block;
+	margin-top: 30px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+.k-navi .km-menu {
+	display: table;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-style: hidden;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+#m-karta .k-navi .km-menu a:hover, #m-karta .k-navi div.km-menu a.active {
+	background-color: #cc0c01;
+}
+#m-karta .k-navi .kb-list.active {
+	display: block;
+}
+#m-karta .k-navi .kb-list {
+	display: none;
+	width: 100%;
+	min-height: 440px;
+	font-size: 15px;
+}
+#kb-techspec .techspec-l {
+	margin-right: 2%;
+}
+#kb-techspec .techspec-l, #kb-techspec .techspec-r {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
+#kb-techspec .techspec-l, #kb-techspec .techspec-r {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
