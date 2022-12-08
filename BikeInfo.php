@@ -1,21 +1,6 @@
 <?php include("app/include/header.php"); ?>
 
 <div class="conteiner">
-    <div class="navigation b20">
-        <div class="page-head">
-            <div class="page-title">
-                <div class="h1_title">Категория</div>
-                <h1 style="display: none">Шоссейный велосипед Outleap TRACKWAY</h1>
-            </div>
-            <div class="bread" width="70%" align="right"><a href="javascript:history.back();" class="goBack"><span>Назад</span></a><span>&nbsp;/&nbsp;</span>
-                <a href="#"><span>Главная</span></a> / <a href="#"><span>Категория</span></a> / <a href="#"><span>Название</span></a>  
-            </div>
-        </div>
-        <div class="line_wide"></div>
-    </div>
-</div>
-
-<div class="conteiner">
     <h1 class="h1-top">AUTHOR Guru 2023
         <span>
             Carbon frame and fork, 12mm axle &nbsp;|&nbsp; SHIMANO GRX 810/600 components, 22 speed &nbsp;|&nbsp; MAVIC ALLROAD DISC CL UST wheel sets
