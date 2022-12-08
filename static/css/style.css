@@ -177,7 +177,6 @@ body{
 	display: block;
 	padding: 0 10px;
 }
-
 .photo__bike{
 	display: block;
 	margin-top: 30px;
@@ -185,7 +184,8 @@ body{
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
 	display: block;
 }
-.k-navi .km-menu {
+/* Меню выбора разделов */
+.km-menu {
 	display: table;
 	table-layout: fixed;
 	border-collapse: collapse;
@@ -220,3 +220,4 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	width: 49%;
 	vertical-align: top;
 }
+
