@@ -19,7 +19,6 @@ function dbCheckError($querry){
     return true;
 }
 
-
 // Получение всех данных одной таблицы, с возможными параметрами
 function selectAll($table, $params = []){
     global $pdo;
@@ -49,7 +48,6 @@ function selectAll($table, $params = []){
 
     return $querry->fetchAll();
 }
-
 
 // Получение 1 строки данных из таблицы
 function selectOne($table, $params = []){
@@ -82,32 +80,71 @@ function selectOne($table, $params = []){
     return $querry->fetch();
 }
 
-
-// Вставка данных в таблицу
-function insert($table){
+// Запись в таблицу БД
+function insert($table, $params){
     global $pdo;
-    
-    // INSERT INTO 'favorites' (UID, BID) VALUES ('1', ['2', '3']);
-    //             'compares' (UID, BID) VALUES ('1', ['2', '3']);
-    //             'users' (admin, username, email, password) VALUES ('0', 'eolmer', 'dan@gmail.com', '1234');
+    $i = 0;
+    $coll = '';
+    $mask = '';
+
+    foreach ($params as $key => $value) {
+        if ($i === 0){
+            $coll = $coll . "$key";
+            $mask = $mask . "'" ."$value" . "'";
+        }else {
+            $coll = $coll . ", $key";
+            $mask = $mask . ", '" . "$value" . "'";
+        }
+        $i++;
+    }
+
+    $sql = "INSERT INTO $table ($coll) VALUES ($mask)";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
+
+    return $pdo->lastInsertId();
 }
 
+// Обновление строки в таблице по Id
+function update($table, $id, $params){
+    global $pdo;
+    $i = 0;
+    $str = '';
 
-// Обновление строки в таблице
-function update($table){
+    foreach ($params as $key => $value) {
+        if ($i === 0){
+            $str = $str . $key . " = '" . $value . "'";
+        }else {
+            $str = $str .", " . $key . " = '" . $value . "'";
+        }
+        $i++;
+    }
 
+    $sql = "UPDATE $table SET $str WHERE ID = $id";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
 }
-
 
 // Удаление строки в таблице
-function delete($table){
-    
+function delete($table, $id){
+    global $pdo;
+
+    $sql = "DELETE FROM $table WHERE ID = $id";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
 }
 
 $params = [
     'Name' => 'Jamis',
 ];
-// test(selectAll('brands', $params));
-test(selectOne('brands'));
+$UserData = [
+    'FLID' => '1',
+    'Favorites' => '',
+    'Comparsion' => '',   
+];
 
 ?>
