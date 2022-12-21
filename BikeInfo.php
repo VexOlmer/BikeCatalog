@@ -1,4 +1,8 @@
-<?php include("app/include/header.php"); ?>
+<?php 
+	include("config.php");
+    include("app/controllers/users.php"); 
+	include("app/include/header.php");
+?>
 
 <div class="conteiner">
     <h1 class="h1-top">AUTHOR Guru 2023

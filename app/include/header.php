@@ -1,5 +1,3 @@
-<?php include("config.php"); ?>
-
 <!DOCTYPE html>
 <html lang="en>
     <head>
@@ -37,8 +35,20 @@
                 </nav>
 
                 <div class="text-end">
-                    <button type="button" class="header-login">Login</button>
-                    <button type="button" class="header-sign">Sign-up</button>
+                    <?php if (isset($_SESSION['id'])): ?>
+                        <a href="#">
+                            <?php echo $_SESSION['username']; ?>
+                        </a>
+                        <ul>
+                            <li><a href="<?php echo BASE_URL . "Logout.php"; ?>">Выход</a> </li>
+                        </ul>
+                        <?php else: ?>
+                                <a href="<?php echo BASE_URL . "Login.php"; ?>" class="header-sign">Войти</a>
+                            </a>
+                            <ul>
+                                <a href="<?php echo BASE_URL . "Register.php"; ?>" class="header-sign">Регистрация</a>
+                            </ul>
+                        <?php endif; ?>
                 </div>
             </div>
         </div>
