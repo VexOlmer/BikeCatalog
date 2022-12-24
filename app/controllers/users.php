@@ -6,8 +6,8 @@ $errMsg = '';  // Какая-либо ошибка при обработке д�
 
 function userAuth($user){
     $_SESSION['id'] = $user['ID'];
-    $_SESSION['username'] = $user['Username'];
-    $_SESSION['admin'] = $user['Admin'];
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['admin'] = $user['admin'];
     header('location: ' . BASE_URL . "BikeInfo.php");
 }
 
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-reg'])){
     }
     else{
         $existence = selectOne('users', ['email' => $email]);
-        if($existence['Email'] === $email){
+        if($existence['email'] === $email){
             $errMsg = "Пользователь с такой почтой уже зарегистрирован!";
         }
         else{
@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-log'])){
     }
     else{
         $existence = selectOne('users', ['email' => $email]);
-        if($existence && password_verify($pass, $existence['Password'])){
+        if($existence && password_verify($pass, $existence['password'])){
             userAuth($existence);
         }else{
             $errMsg = "Почта либо пароль введены неверно!";

@@ -139,13 +139,42 @@ function delete($table, $id){
     dbCheckError($query);
 }
 
-$params = [
-    'Name' => 'Jamis',
-];
-$UserData = [
-    'FLID' => '1',
-    'Favorites' => '',
-    'Comparsion' => '',   
-];
+// ----------------------------------------------------------------
+// Функции для работы фильтра
+
+function getData($sql){
+    global $pdo;
+
+    $querry = $pdo->prepare($sql);
+    $querry->execute();
+
+    dbCheckError($querry);
+
+    return $querry->fetchall();
+}
+
+// Получение уникальный значений для нужного столбца
+function getColumn($column){
+    $query = "
+        SELECT DISTINCT($column)
+        FROM bikeinfo";
+    return  getData($query);
+}
+
+// "category", "type", "destination", "level", "season"
+// Выдает продукты по параметрам поиска
+function searchBike(){
+    $sqlQuery = "SELECT * FROM bikeinfo WHERE BID != '0'";
+
+    if(isset($_POST["category"])) {
+        $FilterData = implode("','", $_POST["category"]);
+        $sqlQuery .= "
+        AND category IN(' ".$FilterData."')";
+    }
+    
+    $query .= " ORDER By price";
+    
+    echo getData($query);
+}	
 
 ?>

@@ -3,6 +3,7 @@
 	include("app/controllers/users.php"); 
 	include("app/include/header.php");
 ?>
+
 <div class="conteiner">
     <div class="main-reg-form">
 		<div class="reg-form-info">
