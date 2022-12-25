@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale-1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Bike Catalog</title>
-        <link rel="stylesheet" href="static/css/reset.css">
-        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="static/css/reset.css" type="text/css" >
+        <link rel="stylesheet" href="static/css/style.css" type="text/css" >
     </head>
 <body>
 

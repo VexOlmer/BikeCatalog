@@ -300,7 +300,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 
-/* Main Info All Bikes */
+/* All Bikes - Filter */
 .content-AllBikes{
     display: flex;
     flex-wrap: wrap;
@@ -365,6 +365,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: -webkit-box;
     -webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
+}
+nav[role="navigation"] {
+    text-align: center;
+    display: block;
 }
 
 

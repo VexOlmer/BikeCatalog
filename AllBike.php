@@ -54,7 +54,8 @@
             ?>
             <div class="Bikes-row">
                 <div class="Bikes-row-image">
-                    <img src="static/img/svg/BikePhotoTest.svg" alt="image" class="Bike-image">
+                    <img src="static/img/svg/BikePhotoTest.svg" alt="image" class="Bike-image" 
+                            onclick="window.location.href = '<?php echo BASE_URL . 'BikeInfo.php'?>'">
                 </div>
                 <div class="Bikes-row-text">
                     <a href="<?php echo BASE_URL . 'BikeInfo.php'?>" class="nav-link">
@@ -69,6 +70,7 @@
                 </div>
             </div>
             <?php }} ?>
+            <?php  include("app/include/pagination.php"); ?>
         </div>
     </div>
 </div>

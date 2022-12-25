@@ -160,7 +160,12 @@ function getColumn($table, $column){
     $query = "
         SELECT DISTINCT($column)
         FROM $table";
-    return  getData($query);
+    return getData($query);
+}
+
+function countRow($table){
+    $query = "SELECT COUNT(*) FROM $table WHERE status LIKE '1'";
+    return getData($query);
 }
 
 ?>
