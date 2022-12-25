@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require('connect.php');
+require_once('connect.php');
 
 function test($value){
     echo '<pre>';
@@ -18,6 +18,17 @@ function dbCheckError($querry){
         exit();
     }
     return true;
+}
+
+function getData($sql){
+    global $pdo;
+
+    $querry = $pdo->prepare($sql);
+    $querry->execute();
+
+    dbCheckError($querry);
+
+    return $querry->fetchall();
 }
 
 // Получение всех данных одной таблицы, с возможными параметрами
@@ -42,12 +53,7 @@ function selectAll($table, $params = []){
         }
     }
 
-    $querry = $pdo->prepare($sql);
-    $querry->execute();
-
-    dbCheckError($querry);
-
-    return $querry->fetchAll();
+    return getData($sql);
 }
 
 // Получение 1 строки данных из таблицы
@@ -143,17 +149,6 @@ function delete($table, $id){
 
 // ----------------------------------------------------------------
 // Функции для работы фильтра
-
-function getData($sql){
-    global $pdo;
-
-    $querry = $pdo->prepare($sql);
-    $querry->execute();
-
-    dbCheckError($querry);
-
-    return $querry->fetchall();
-}
 
 // Получение уникальный значений для нужного столбца
 function getColumn($table, $column){

@@ -1,8 +1,8 @@
 <?php 
-	include("config.php");
+	require_once("config.php");
     $second_header = true;
-    include("app/controllers/users.php"); 
-	include("app/include/header.php");
+    require_once("app/controllers/users.php"); 
+	require_once("app/include/header.php");
 ?>
 
 <div class="conteiner">

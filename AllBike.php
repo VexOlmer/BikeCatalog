@@ -1,8 +1,9 @@
 <?php
-    include("config.php");
+    require_once("config.php");
     $second_header = true;
-    include("app/include/header.php");
-    include("app/controllers/searchBike.php");
+    require_once("app/controllers/searchBike.php");
+    require_once("app/controllers/favor-compr.php");
+    require_once("app/include/header.php");
 ?>
 
 <div class="conteiner">
@@ -21,22 +22,26 @@
                     foreach($filter_column as $key => $column){
                 ?>
 
-                    <div class="list-group">
-                        <h3><?php echo $column_ru[$key] ?></h3>
-                        <div class="brandSection">
-                            <?php
-                                $column_info = getColumn('bikeinfo', $column);
-                                foreach($column_info as $info){	
-                            ?>
-                                <div class="list-group-item checkbox">
-                                <label>
-                                    <input type="checkbox" class="" value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" > 
-                                    <?php echo $info[$column]; ?>
-                                </label>
-                                </div>
-                            <?php }	?>
-                        </div>
+                <div class="list-group">
+                    <h3><?php echo $column_ru[$key] ?></h3>
+                    <div class="brandSection">
+                        <?php
+                            $column_info = getColumn('bikeinfo', $column);
+                            foreach($column_info as $info){	
+                        ?>
+                            <div class="list-group-item checkbox">
+                            <label>
+                                <?php if(isset($_GET['category']) and $info[$column] === $_GET['category']): ?>
+                                    <input type="checkbox" checked='checked' class="" value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
+                                <?php else: ?>
+                                    <input type="checkbox" class="" value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
+                                <?php endif; ?>
+                                <?php echo $info[$column]; ?>
+                            </label>
+                            </div>
+                        <?php }	?>
                     </div>
+                </div>
                 <?php }	?>
                 <input type="submit" value="Показать" name="btn-show-filter">
                 <input type="submit" value="Сбросить" name="btn-del-filter">
@@ -67,6 +72,17 @@
                     <p><?php echo selectOne('brands', ['ID' => $bike_info['BID']])['name'] ?></p>
                     <br/>
                     <p><?php echo $bike_info['season'] ?></p>
+
+                    <?php if (isset($_SESSION['id'])): ?>
+                        <form action="AllBike.php" method="post">
+                            <button type="submit" value=<?php echo $bike_info['ID'] ?> name="btn-add-favor" class='hello'>
+                                В избранное
+                            </button>
+                            <button type="submit" value=<?php echo $bike_info['ID'] ?> name="btn-add-compr" class='hello'>
+                                К сравнению
+                            </button>
+                        </form>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php }} ?>

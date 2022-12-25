@@ -369,6 +369,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 nav[role="navigation"] {
     text-align: center;
     display: block;
+    background-color: #75e847;
 }
 
 
@@ -439,7 +440,7 @@ input.email, input.text.w3lpass {
 :-ms-input-placeholder {
     color: #cc0c01;
 }
-input[type="submit"] {
+.btn-reg-log{
     font-size: .9em;
     color: #fff;
     background: #76b852;
@@ -451,7 +452,7 @@ input[type="submit"] {
     margin: 2em 0;
     letter-spacing: 4px;
 }
-input[type="submit"]:hover {
+.btn-reg-log:hover {
     -webkit-transition: .5s all;
     -moz-transition: .5s all;
     -o-transition: .5s all;

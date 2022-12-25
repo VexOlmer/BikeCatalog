@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include "config.php";
+require_once("config.php");
 
 unset($_SESSION['id']);
 unset($_SESSION['login']);

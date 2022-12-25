@@ -22,6 +22,7 @@
                     <input type="search" class="header-form-control" placeholder="Search..." aria-label="Search">
                 </form>
 
+                <?php if (isset($_SESSION['id'])): ?>
                 <nav class="nav">
                     <a href="<?php echo BASE_URL . 'about.php'?>" class="nav-link">
                         <img src="static/img/svg/compare.svg" alt="Compare Logo" class="header-menu-pic">
@@ -32,6 +33,7 @@
                         Избранное
                     </a>
                 </nav>
+                <?php endif; ?>
 
                 <div class="text-end">
                     <?php if (isset($_SESSION['id'])): ?>
@@ -41,13 +43,12 @@
                         <ul>
                             <li><a href="<?php echo BASE_URL . "Logout.php"; ?>">Выход</a> </li>
                         </ul>
-                        <?php else: ?>
-                                <a href="<?php echo BASE_URL . "Login.php"; ?>" class="header-sign">Войти</a>
-                            </a>
+                    <?php else: ?>
+                            <a href="<?php echo BASE_URL . "Login.php"; ?>" class="header-sign">Войти</a>
                             <ul>
                                 <a href="<?php echo BASE_URL . "Register.php"; ?>" class="header-sign">Регистрация</a>
                             </ul>
-                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -61,7 +62,7 @@
                         <span>Назад</span>
                     </a>
                         /
-                    <a href="#">
+                    <a href="<?php echo BASE_URL . "Main.php"; ?>">
                         <span>Главная</span>
                     </a> 
                         / 
