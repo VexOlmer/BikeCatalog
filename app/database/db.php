@@ -81,6 +81,8 @@ function selectOne($table, $params = []){
     return $querry->fetch();
 }
 
+
+// ----------------------------------------------------------------
 // Запись в таблицу БД
 function insert($table, $params){
     global $pdo;
@@ -154,27 +156,11 @@ function getData($sql){
 }
 
 // Получение уникальный значений для нужного столбца
-function getColumn($column){
+function getColumn($table, $column){
     $query = "
         SELECT DISTINCT($column)
-        FROM bikeinfo";
+        FROM $table";
     return  getData($query);
 }
-
-// "category", "type", "destination", "level", "season"
-// Выдает продукты по параметрам поиска
-function searchBike(){
-    $sqlQuery = "SELECT * FROM bikeinfo WHERE BID != '0'";
-
-    if(isset($_POST["category"])) {
-        $FilterData = implode("','", $_POST["category"]);
-        $sqlQuery .= "
-        AND category IN(' ".$FilterData."')";
-    }
-    
-    $query .= " ORDER By price";
-    
-    echo getData($query);
-}	
 
 ?>

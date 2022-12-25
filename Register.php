@@ -1,5 +1,6 @@
 <?php 
 	include("config.php");
+	$second_header = true;
 	include("app/controllers/users.php"); 
 	include("app/include/header.php");
 ?>

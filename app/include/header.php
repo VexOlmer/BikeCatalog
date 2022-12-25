@@ -53,6 +53,7 @@
             </div>
         </div>
     </div>
+    <?php if($second_header){ ?>
     <div class="conteiner">
         <div class="second-header">
             <span class="fs-4">Категория</span>
@@ -76,4 +77,5 @@
         </div>
         <div class="line_wide"></div>
     </div>
+    <?php } ?>
 </header>

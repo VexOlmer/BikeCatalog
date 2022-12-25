@@ -1,0 +1,51 @@
+<?php
+    include("config.php");
+    $second_header = false;
+    include("app/include/header.php");
+?>
+
+<div class="wrapper">
+    <h1 class="Perfect_bike">
+        Выбери идеальный велосипед
+    </h1>
+</div>
+<div class="conteiner">
+    <div class="category-main">
+        <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php'?>'">
+            <img src="static/img/main_page/highway.jpg" alt="higway bike" class="img-card">
+            <div class="info_card">
+                Шоссейные велосипеды
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php'?>'">
+            <img src="static/img/main_page/mountain.jpg" alt="mountain bike" class="img-card">
+                <div class="info_card">
+                    Горные велосипеды
+                </div>
+        </div>
+        <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php'?>'">
+            <img src="static/img/main_page/touring.jpg" alt="touring bike" class="img-card">
+                <div class="info_card">
+                    Прогулочные велосипеды
+                </div>
+        </div>
+        <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php'?>'">
+                <img src="static/img/main_page/begovel.jpg" alt="begovel bike" class="img-card">
+                <div class="info_card">
+                    Беговелы
+                </div>
+        </div>
+        <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php'?>'">
+                <img src="static/img/main_page/bmx.jpg" alt="bmx bike" class="img-card">
+                <div class="info_card">
+                    BMX
+                </div>
+        </div>
+        <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php'?>'">
+                <img src="static/img/main_page/electric.jpg" alt="electric bike" class="img-card">
+                <div class="info_card">
+                    Электровелосипеды
+                </div>
+        </div>
+    </div>
+</div>

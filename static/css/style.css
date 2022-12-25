@@ -153,9 +153,6 @@ body{
 }
 
 /* Second Header */
-
-
-
 .navigation {
     padding: 0;
     margin-bottom: 10px !important;
@@ -206,6 +203,51 @@ body{
 	text-align: center;
 	text-transform: uppercase;
 	line-height: 40px;
+}
+
+/* Main page */
+.wrapper{
+    display: block;
+    width: 100%;
+    height: 65vh;
+    padding-bottom: 30px;
+    background: url('../img/main_page/bike_background.jpg') no-repeat;
+    background-size: 100% 500px;
+}
+.card{
+    background: #ffffff;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: inset -2px 0 0 0 #DDDDDD, inset 0 -2px 0 0 #DDDDDD, -2px -2px 0 0 #DDDDDD, -2px 0 0 0 #DDDDDD, 0 -2px 0 0 #DDDDDD;
+  }
+.img-card{
+   object-fit: cover;
+   padding-top: 10px;
+   height: 80%;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   position: absolute
+}
+.info_card{
+    text-align: center;
+    padding-top: 38%;
+    font-size: 25px;
+}
+.Perfect_bike{
+    color: rgb(245, 9, 9);
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 89px;    
+    font-style: normal;
+    text-align: center;
+}
+.category-main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin: 20px;
 }
 
 /* Main Info Bike */
@@ -316,6 +358,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     padding: 20px;
     border-radius: 3px;
     margin-bottom: 30px;
+}
+.limited-desc-bike{
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
 }
 
 
