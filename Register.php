@@ -20,6 +20,7 @@
 				<p>Уже есть аккаунт? <a href="<?php echo BASE_URL . 'Login.php'?>"> Войдите!</a></p>
 			</div>
 		</div>
+	</div>
 </div>
 
-<?php include("app/include/footer.php"); ?>
+<?php require_once("app/include/footer.php"); ?>

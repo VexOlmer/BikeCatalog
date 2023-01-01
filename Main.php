@@ -50,3 +50,5 @@
         </div>
     </div>
 </div>
+
+<?php include("app/include/footer.php"); ?>

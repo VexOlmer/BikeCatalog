@@ -21,9 +21,10 @@
         </section>
         <section class="k-navi">
             <div class="km-menu" id="go-kestazeni">
-                <a href="#!technicka-specifikace" id="km-techspec" class="active">technical specification</a>
-                <a href="#!geometrie-modelu" id="km-geometrie">geometry and sizes</a>
-                <a href="#!galerie-modelu" id="km-galerie">photogallery</a>
+                <a href="#!technicka-specifikace" id="km-techspec" class="active">Описание</a>
+                <a href="#!geometrie-modelu" id="km-geometrie">Геометрия</a>
+                <a href="#!galerie-modelu" id="km-galerie">Фотогалерея</a>
+                <a href="#!galerie-modelu" id="km-galerie">О бренде</a>
             </div>
             <!-- Тех-характеристика -->
             <div class="kb-list active" id="kb-techspec">
@@ -69,4 +70,4 @@
     </div>
 </div>
 
-<?php include("app/include/footer.php"); ?>
+<?php require_once("app/include/footer.php"); ?>

@@ -18,6 +18,7 @@
 				<p>Еще нет аккаунта? <a href="<?php echo BASE_URL . 'Register.php'?>"> Зарегистрируйтесь!</a></p>
 			</div>
 		</div>
+	</div>
 </div>
 
-<?php include("app/include/footer.php"); ?>
+<?php require_once("app/include/footer.php"); ?>

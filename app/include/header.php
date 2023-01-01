@@ -15,7 +15,7 @@
             <div class="header-inner">
                 <div class="header-logo">
                     <img src="static/img/svg/Logo.svg" alt="Bike Logo" class="header-logo-pic">
-                    <a href="<?php echo BASE_URL ?>" class="nav-link">Bike</a>
+                    <a href="<?php echo BASE_URL . 'Main.php' ?>" class="nav-link">Bike</a>
                 </div>
 
                 <form class="header-form" role="search">

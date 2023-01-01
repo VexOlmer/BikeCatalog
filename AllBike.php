@@ -10,28 +10,30 @@
     <div class="content-AllBikes">
         <!-- Filter Content -->
         <div class="context-AllBikes-Filter">
-            <div class="Filter-search">
+            <!-- <div class="Filter-search">
                 <h3>Сортировка</h3>
-            </div>
+            </div> -->
 
             <form action="AllBike.php" method="post">
 
                 <?php
-                    $filter_column = array("category", "type", "destination", "level", "season");
-                    $column_ru = array("Категория", "Тип", "Назначение", "Уровень оборудования", "Сезон");
+                    $filter_column = array("category", "type", "destination", "level", "season", "name_company");
+                    $column_ru = array("Категория", "Тип", "Назначение", "Уровень оборудования", "Сезон", "Компания");
+                    $table = array("bikeinfo", "bikeinfo", "bikeinfo", "bikeinfo", "bikeinfo", "brands");
                     foreach($filter_column as $key => $column){
                 ?>
 
                 <div class="list-group">
-                    <h3><?php echo $column_ru[$key] ?></h3>
+                    <!-- Название категории на русском -->
+                    <h3><?php echo $column_ru[$key] ?></h3>  
                     <div class="brandSection">
                         <?php
-                            $column_info = getColumn('bikeinfo', $column);
+                            $column_info = getColumn($table[$key], $column);
                             foreach($column_info as $info){	
                         ?>
                             <div class="list-group-item checkbox">
                             <label>
-                                <?php if(isset($_GET['category']) and $info[$column] === $_GET['category']): ?>
+                                <?php if(in_array($info[$column], $column_true_filter) or isset($_GET['category']) and $info[$column] === $_GET['category']): ?>
                                     <input type="checkbox" checked='checked' class="" value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
                                 <?php else: ?>
                                     <input type="checkbox" class="" value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
@@ -69,7 +71,7 @@
                     <br/>
                     <p class="limited-desc-bike"><?php echo $bike_info['description'] ?></p>
                     <br/>
-                    <p><?php echo selectOne('brands', ['ID' => $bike_info['BID']])['name'] ?></p>
+                    <p><?php echo selectOne('brands', ['ID' => $bike_info['BID']])['name_company'] ?></p>
                     <br/>
                     <p><?php echo $bike_info['season'] ?></p>
 
