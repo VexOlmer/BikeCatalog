@@ -10,6 +10,7 @@
         Выбери идеальный велосипед
     </h1>
 </div>
+
 <div class="conteiner">
     <div class="category-main">
         <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php' . '?category=шоссейный'?>'">

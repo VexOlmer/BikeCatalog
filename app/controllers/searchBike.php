@@ -3,7 +3,7 @@
 include("app/database/db.php");
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
-$limit = 5;
+$limit = 3;
 $offset = $limit * ($page - 1);  // С какой записи начинать поиск в DB
 $total_pages = round(countRow('bikeinfo')[0]['COUNT(*)'] / $limit, 0);
 

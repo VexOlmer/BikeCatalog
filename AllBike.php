@@ -25,28 +25,36 @@
 
                 <div class="list-group">
                     <!-- Название категории на русском -->
-                    <h3><?php echo $column_ru[$key] ?></h3>  
+                    <h3 class="name-filter-group"><?php echo $column_ru[$key] ?></h3>  
                     <div class="brandSection">
                         <?php
                             $column_info = getColumn($table[$key], $column);
                             foreach($column_info as $info){	
                         ?>
-                            <div class="list-group-item checkbox">
+                            <div class="checkbox">
                             <label>
-                                <?php if(in_array($info[$column], $column_true_filter) or isset($_GET['category']) and $info[$column] === $_GET['category']): ?>
-                                    <input type="checkbox" checked='checked' class="" value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
-                                <?php else: ?>
-                                    <input type="checkbox" class="" value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
+                                <?php if($info[$column] != ''): ?>
+                                    <?php if(in_array($info[$column], $column_true_filter) or isset($_GET['category']) and $info[$column] === $_GET['category']): ?>
+                                        <input type="checkbox" checked='checked' value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
+                                    <?php else: ?>
+                                        <input type="checkbox" value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
+                                    <?php endif; ?>
+                                    <?php echo $info[$column]; ?>
                                 <?php endif; ?>
-                                <?php echo $info[$column]; ?>
                             </label>
                             </div>
                         <?php }	?>
                     </div>
                 </div>
                 <?php }	?>
-                <input type="submit" value="Показать" name="btn-show-filter">
-                <input type="submit" value="Сбросить" name="btn-del-filter">
+
+                <div class="button-search-drop">
+                    <button class="button-search" type="submit" name="btn-show-filter">Показать</button>
+                </div>
+                <div class="button-search-drop">
+                    <button class="button-drop-search" type="submit" name="btn-del-filter">Сбросить</button>
+                </div>
+
             </form>
         </div>
 
@@ -65,15 +73,12 @@
                             onclick="window.location.href = '<?php echo BASE_URL . 'BikeInfo.php'?>'">
                 </div>
                 <div class="Bikes-row-text">
-                    <a href="<?php echo BASE_URL . 'BikeInfo.php'?>" class="nav-link">
+                    <a href="<?php echo BASE_URL . 'BikeInfo.php'?>" class="nav-link-all-bike">
                         <p><?php echo $bike_info['category'] . ' велосипед ' . $bike_info['name'] ?></p>
                     </a>
-                    <br/>
-                    <p class="limited-desc-bike"><?php echo $bike_info['description'] ?></p>
-                    <br/>
-                    <p><?php echo selectOne('brands', ['ID' => $bike_info['BID']])['name_company'] ?></p>
-                    <br/>
-                    <p><?php echo $bike_info['season'] ?></p>
+                    <span class="limited-desc-bike"><?php echo $bike_info['description'] ?></span>
+                    <span><?php echo selectOne('brands', ['ID' => $bike_info['BID']])['name_company'] ?></span>
+                    <span><?php echo $bike_info['season'] ?></span>
 
                     <?php if (isset($_SESSION['id'])): ?>
                         <form action="AllBike.php" method="post">
@@ -87,8 +92,9 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <?php }} ?>
+            <?php } ?>
             <?php  include("app/include/pagination.php"); ?>
+            <?php } ?>
         </div>
     </div>
 </div>

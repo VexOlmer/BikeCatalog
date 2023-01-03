@@ -15,11 +15,11 @@
             <div class="header-inner">
                 <div class="header-logo">
                     <img src="static/img/svg/Logo.svg" alt="Bike Logo" class="header-logo-pic">
-                    <a href="<?php echo BASE_URL . 'Main.php' ?>" class="nav-link">Bike</a>
+                    <a href="<?php echo BASE_URL . 'Main.php' ?>" class="nav-link-header">Bike</a>
                 </div>
 
-                <form class="header-form" role="search">
-                    <input type="search" class="header-form-control" placeholder="Search..." aria-label="Search">
+                <form class="header-search" role="search">
+                    <input type="search" class="header-search-control" placeholder="Search..." aria-label="Search">
                 </form>
 
                 <?php if (isset($_SESSION['id'])): ?>
@@ -56,8 +56,10 @@
     <?php if($second_header){ ?>
     <div class="conteiner">
         <div class="second-header">
-            <span class="fs-4">Категория</span>
-            <div width="70%" align="right">
+            <span class="second-header-category">
+                Шоссейные велосипеды
+            </span>
+            <div width="70%" align="right" class="second-header-history">
                     <a href="javascript:history.back();" class="goBack">
                         <span>Назад</span>
                     </a>
@@ -66,13 +68,14 @@
                         <span>Главная</span>
                     </a> 
                         / 
-                    <a href="#">
-                        <span>Категория</span>
-                    </a>
-                        /
+                    <!-- <a href="#">
+                        <span>Велосипеды</span>
+                    </a> -->
+                    <span>Велосипеды</span>
+                        <!-- /
                     <a href="#">
                         <span>Название</span>
-                    </a>  
+                    </a>   -->
                 </div>
         </div>
         <div class="line_wide"></div>
