@@ -1,4 +1,4 @@
-<nav role="navigation">
+<nav role="pagination">
     <ul class="pagination justify-content-center">
         <li class="page-item">
             <a class="page-link" href="?page=1">First</a>

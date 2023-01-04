@@ -72,25 +72,37 @@
                     <img src="static/img/svg/BikePhotoTest.svg" alt="image" class="Bike-image" 
                             onclick="window.location.href = '<?php echo BASE_URL . 'BikeInfo.php'?>'">
                 </div>
-                <div class="Bikes-row-text">
-                    <a href="<?php echo BASE_URL . 'BikeInfo.php'?>" class="nav-link-all-bike">
-                        <p><?php echo $bike_info['category'] . ' велосипед ' . $bike_info['name'] ?></p>
+                <span class="bikes-row-text">
+                    <a href="<?php echo BASE_URL . 'BikeInfo.php'?>" class="bikes-row-title">
+                        <span><?php echo $bike_info['category'] . ' велосипед ' . $bike_info['name'] ?></span>
                     </a>
                     <span class="limited-desc-bike"><?php echo $bike_info['description'] ?></span>
-                    <span><?php echo selectOne('brands', ['ID' => $bike_info['BID']])['name_company'] ?></span>
-                    <span><?php echo $bike_info['season'] ?></span>
 
-                    <?php if (isset($_SESSION['id'])): ?>
-                        <form action="AllBike.php" method="post">
-                            <button type="submit" value=<?php echo $bike_info['ID'] ?> name="btn-add-favor" class='hello'>
-                                В избранное
-                            </button>
-                            <button type="submit" value=<?php echo $bike_info['ID'] ?> name="btn-add-compr" class='hello'>
-                                К сравнению
-                            </button>
-                        </form>
-                    <?php endif; ?>
-                </div>
+                    <span class="brand_collection">
+							<span class="brand">
+                                <span class="label">Бренд:</span>
+                                <span class="blue">
+                                    <?php echo selectOne('brands', ['ID' => $bike_info['BID']])['name_company'] ?>
+                                </span>
+                            </span>
+							<span class="collection">
+                                <span class="label">Сезон:</span>
+                                <span class="value">
+                                    <?php echo $bike_info['season'] ?>
+                                </span>
+                            </span>
+					</span> 
+                    <!-- <span class="bikes-row-checks">
+                        <span class="check">
+                            <input type="checkbox" id="compare2541121" value="1" onchange="compareClick(2541121);">
+                            <label for="compare2541121">к сравнению</label>
+                            <i>
+                            </i>
+                        </span>
+                        <span class="check"><input type="checkbox" id="notepad2541121" value="1" onchange="notepadClick(2541121, 'list');">
+                        <label for="notepad2541121">в избранное</label><i></i></span>
+                    </span> -->
+                </span>
             </div>
             <?php } ?>
             <?php  include("app/include/pagination.php"); ?>
