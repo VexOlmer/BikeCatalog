@@ -1,26 +1,34 @@
 <?php 
 	require_once("config.php");
-	$second_header = false; 
+	$second_header = false;
+	$login_css = true;
 	require_once("app/controllers/users.php"); 
 	require_once("app/include/header.php");
 ?>
 
-<div class="conteiner">
-    <div class="main-reg-form">
-		<div class="reg-form-info">
-			<div class="reg-form-info-top">
-				<form action="Register.php" method="post">
-					<p><?=$errMsg?></p>
-					<input class="text" type="text" name="username" placeholder="Имя пользователя" required="">
-					<input class="text email" type="email" name="email" placeholder="Почта" required="">
-					<input class="text" type="password" name="pass" placeholder="Пароль" required="">
-					<input class="text w3lpass" type="password" name="pass-repeat" placeholder="Повторите пароль" required="">
-					<input type="submit" value="Регистрация" name="btn-reg" class="btn-reg-log">
-				</form>
-				<p>Уже есть аккаунт? <a href="<?php echo BASE_URL . 'Login.php'?>"> Войдите!</a></p>
+<div class="container">
+	<section id="content">
+		<form action="Register.php" method="post">
+			<h1>Регистрация</h1>
+			<p><?=$errMsg?></p>
+			<div>
+				<input type="text" name="username" placeholder="Имя пользователя" id="username" required="">
 			</div>
-		</div>
-	</div>
+			<div>
+				<input type="email" name="email" placeholder="Почта" id="username" required="">
+			</div>
+			<div>
+				<input type="password" name="pass" placeholder="Пароль" id="password" required="">
+			</div>
+			<div>
+				<input type="password" name="pass-repeat" placeholder="Повторите пароль" required="" id="password">
+			</div>
+			<div>
+				<input type="submit" value="Регистрация" name="btn-reg"/>
+				<a href="<?php echo BASE_URL . 'Login.php'?>">Войти</a>
+			</div>
+		</form>
+	</section>
 </div>
 
 <?php require_once("app/include/footer.php"); ?>
