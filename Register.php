@@ -1,6 +1,6 @@
 <?php 
 	require_once("config.php");
-	$second_header = true; 
+	$second_header = false; 
 	require_once("app/controllers/users.php"); 
 	require_once("app/include/header.php");
 ?>

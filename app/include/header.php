@@ -4,8 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale-1.0">
         <title>Bike Catalog</title>
+
         <link rel="stylesheet" href="static/css/reset.css" type="text/css" >
         <link rel="stylesheet" href="static/css/style.css" type="text/css" >
+
+        <?php if($login_css): ?>
+            <link rel="stylesheet" href="static/css/login.css" type="text/css" >
+        <?php endif; ?>
+
     </head>
 <body>
 

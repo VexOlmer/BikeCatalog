@@ -1,6 +1,7 @@
 <?php
     require_once("config.php");
     $second_header = true;
+    $login_css = false;
     require_once("app/controllers/searchBike.php");
     require_once("app/controllers/favor-compr.php");
     require_once("app/include/header.php");

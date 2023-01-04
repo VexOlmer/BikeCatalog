@@ -1,6 +1,7 @@
 <?php
     include("config.php");
     $second_header = false;
+    $login_css = false;
     include("app/database/db.php");
     include("app/include/header.php");
 ?>
