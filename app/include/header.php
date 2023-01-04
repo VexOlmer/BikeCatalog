@@ -12,6 +12,8 @@
             <link rel="stylesheet" href="static/css/login.css" type="text/css" >
         <?php endif; ?>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
     </head>
 <body>
 

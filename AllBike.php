@@ -70,7 +70,7 @@
             ?>
             <div class="Bikes-row">
                 <div class="Bikes-row-image">
-                    <img src="static/img/svg/BikePhotoTest.svg" alt="image" class="Bike-image" 
+                    <img src="<?php echo "static/img/bikes_db/" . $bike_info['name'] . '/main.jpg'?>" alt="image" class="Bike-image" 
                             onclick="window.location.href = '<?php echo BASE_URL . 'BikeInfo.php'?>'">
                 </div>
                 <span class="bikes-row-text">
