@@ -13,7 +13,7 @@ $column_true_filter = array();  // Запоминание галочек в фи
 // Авторизация
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-show-filter'])){
 
-    $sqlQuery = "SELECT * FROM bikeinfo INNER JOIN brands ON bikeinfo.BID=brands.ID WHERE status = '1'";
+    $sqlQuery = "SELECT * FROM bikeinfo INNER JOIN brands ON bikeinfo.BID=brands.BRANDS_ID WHERE status = '1'";
     $filter_column = array("category", "type", "destination", "level", "season", "name_company");
 
     foreach($filter_column as $key => $column){

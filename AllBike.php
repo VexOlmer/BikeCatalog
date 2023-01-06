@@ -58,7 +58,7 @@
 
             </form>
         </div>
-
+        
         <!-- Main Content -->
         <div class="content-AllBikes-main">
             <?php
@@ -71,10 +71,10 @@
             <div class="Bikes-row">
                 <div class="Bikes-row-image">
                     <img src="<?php echo "static/img/bikes_db/" . $bike_info['name'] . '/main.jpg'?>" alt="image" class="Bike-image" 
-                            onclick="window.location.href = '<?php echo BASE_URL . 'BikeInfo.php'?>'">
+                            onclick="window.location.href = '<?php echo BASE_URL . 'BikeInfo.php?bike=' . $bike_info['BIKE_ID']?>'">
                 </div>
                 <span class="bikes-row-text">
-                    <a href="<?php echo BASE_URL . 'BikeInfo.php'?>" class="bikes-row-title">
+                    <a href="<?php echo BASE_URL . 'BikeInfo.php?bike=' . $bike_info['BIKE_ID']?>" class="bikes-row-title">
                         <span><?php echo $bike_info['category'] . ' велосипед ' . $bike_info['name'] ?></span>
                     </a>
                     <span class="limited-desc-bike"><?php echo $bike_info['description'] ?></span>
@@ -83,7 +83,7 @@
 							<span class="brand">
                                 <span class="label">Бренд:</span>
                                 <span class="blue">
-                                    <?php echo selectOne('brands', ['ID' => $bike_info['BID']])['name_company'] ?>
+                                    <?php echo selectOne('brands', ['BRANDS_ID' => $bike_info['BID']])['name_company'] ?>
                                 </span>
                             </span>
 							<span class="collection">

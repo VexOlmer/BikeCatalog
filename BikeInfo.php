@@ -4,71 +4,65 @@
     $login_css = false;
     require_once("app/controllers/users.php"); 
 	require_once("app/include/header.php");
-?>
+    require_once("app/controllers/tech_info_bike.php");
 
-<div class="conteiner">
-    <h1 class="h1-top">AUTHOR Guru 2023
-        <span>
-            Carbon frame and fork, 12mm axle &nbsp;|&nbsp; SHIMANO GRX 810/600 components, 22 speed &nbsp;|&nbsp; MAVIC ALLROAD DISC CL UST wheel sets
-        </span>
-    </h1>
-</div>
+    $count_column_info = count($table_tech);
+
+    // Количество строк в левой и правой части таблицы с ТХ
+    $kol_left = intdiv($count_column_info, 2);
+    
+    if($count_column_info % 2 != 0){
+        $kol_left += 1;
+    }
+    $kol_left -= 2;
+?>
 
 <!-- Main Bike Info -->
 <div class="conteiner">
-    <div class="main__info__bike">
+    <div class="name_info_bike">
+        <h1>
+            <?php $bike_main['name'] ?>
+        </h1> 
+    </div>
+    
+    <div class="image_info_bike">
         <section class="photo__bike">
-            <img src="../static/img/svg/BikePhotoTest.svg" title="NAME" alt="NAME">
-        </section>
-        <section class="k-navi">
-            <div class="km-menu" id="go-kestazeni">
-                <a href="#!technicka-specifikace" id="km-techspec" class="active">Описание</a>
-                <a href="#!geometrie-modelu" id="km-geometrie">Геометрия</a>
-                <a href="#!galerie-modelu" id="km-galerie">Фотогалерея</a>
-                <a href="#!galerie-modelu" id="km-galerie">О бренде</a>
-            </div>
-            <!-- Тех-характеристика -->
-            <div class="kb-list active" id="kb-techspec">
-                <h2>Technical specification</h2>
-                <div class="techspec-l">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Size</th>
-                                <td>480, 500, 520, 540, 560 mm</td>
-                            </tr>
-                            <tr>
-                                <th>Frame</th>
-                                <td>AUTHOR carbon Toray T700 / M40 monocoque gravel</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="techspec-r">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Rims</th>
-                                <td>MAVIC Allroad UST Disc CL wheel set, 20 holes</td>
-                            </tr>
-                            <tr>
-                                <th>Wheel set</th>
-                                <td>MAVIC Allroad UST Disc CL wheel set 20 holes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!-- Геометрия -->
-            <div class="kb-list" id="kb-geometrie">
-
-            </div>
-            <!-- Фото-галерея -->
-            <div class="kb-list" id="kb-galerie">
-
-            </div>
+            <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/main.jpg'?>" title="NAME" alt="NAME">
         </section>
     </div>
+
+    <div class="main_info_bike">
+        <!-- <h2 class="name-tech-spec">Характеристика</h2> -->
+
+        <div class="techspec-l">
+            <table>
+                <?php 
+                    for ($i = 0; $i < $kol_left; $i++){
+                        foreach($table_tech[$i] as $key => $value){
+                ?>
+                <tr>
+                    <th class="name-cpes"><?php echo $key ?></th>
+                    <td class="name-spec-info"><?php echo $value ?></td>
+                </tr>
+                <?php }} ?>
+            </table>
+        </div>
+
+        <div class="techspec-r">
+            <table>
+                <?php 
+                    for ($i = $kol_left; $i < $count_column_info; $i++){
+                        foreach($table_tech[$i] as $key => $value){
+                ?>
+                <tr>
+                    <th class="name-cpes"><?php echo $key ?></th>
+                    <td class="name-spec-info"><?php echo $value ?></td>
+                </tr>
+                <?php }} ?>
+            </table>
+        </div>
+    </div>
 </div>
+
 
 <?php require_once("app/include/footer.php"); ?>

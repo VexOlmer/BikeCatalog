@@ -302,54 +302,84 @@ body{
 }
 
 /* Main Info Bike */
-.main__info__bike{
-	display: block;
-	padding: 0 10px;
+.name_info_bike{
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    min-width: 345px;
+    margin: 0 auto 30px auto;
+    padding: 0 10px;
+    font-weight: normal;
+    font-size: 38px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 40px;
 }
-.photo__bike{
-	display: block;
-	margin-top: 30px;
+.image_info_bike{
+    display: block;
+    width: 100%;
+    max-width: 1103px;
+    margin: 0 auto;
+    margin-bottom: 50px;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-	display: block;
+.main_info_bike{
+    display: block;
+    width: 100%;
+    /* 440px */
+    min-height: 460px;
+    font-size: 15px;
 }
-/* Меню выбора разделов */
-.km-menu {
-	display: table;
-	table-layout: fixed;
-	border-collapse: collapse;
-	border-style: hidden;
-	width: 100%;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-transform: uppercase;
+.techspec-l{
+    margin-right: 2%;
+    float:left;
 }
-#m-karta .k-navi .km-menu a:hover, #m-karta .k-navi div.km-menu a.active {
-	background-color: #cc0c01;
+.techspec-r{
+    float:right;
 }
-#m-karta .k-navi .kb-list.active {
-	display: block;
+.techspec-l, .techspec-r{
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    font-size: 15px;
 }
-#m-karta .k-navi .kb-list {
-	display: none;
-	width: 100%;
-	min-height: 440px;
-	font-size: 15px;
-}
-#kb-techspec .techspec-l {
-	margin-right: 2%;
-}
-#kb-techspec .techspec-l, #kb-techspec .techspec-r {
-	display: inline-block;
-	width: 49%;
-	vertical-align: top;
-}
-#kb-techspec .techspec-l, #kb-techspec .techspec-r {
-	display: inline-block;
-	width: 49%;
-	vertical-align: top;
-}
+/* .name-tech-spec{
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    min-width: 345px;
+    margin: 0 auto 30px auto;
+    padding: 0 10px;
+    font-weight: normal;
+    font-size: 34px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 40px;
+} */
+.name-cpes{
+    padding: 6px 10px 4px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #fff;
+    background-color: #f0f0f0;
+    vertical-align: top;
+    text-align: left;
+    white-space: nowrap;
+    text-transform: uppercase;
 
+    min-width: 180px;
+    max-width: 250px !important;
+
+    font-weight: bold;
+}
+.name-spec-info{
+    padding: 4px 10px;
+    font-size: 15px;
+    border: 1px solid #fff;
+
+    width: 100%;
+}
 
 /* All Bikes - Filter */
 .content-AllBikes{

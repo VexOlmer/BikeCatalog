@@ -44,7 +44,7 @@
                     BMX
                 </div>
         </div>
-        <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php' . '?category=электрический'?>'">
+        <div class="card" onclick="window.location.href = '<?php echo BASE_URL . 'AllBike.php' . '?category=электровелосипед'?>'">
                 <img src="static/img/main_page/electric.jpg" alt="electric bike" class="img-card">
                 <div class="info_card">
                     Электровелосипеды
