@@ -47,4 +47,5 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' and isset($_GET['bike'])){
         }
     }
 }
+
 ?>

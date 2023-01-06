@@ -15,21 +15,38 @@
         $kol_left += 1;
     }
     $kol_left -= 2;
+
+    $count_files = count(scandir('static/img/bikes_db/' . $bike_main['name'])) - 3;  // Кол-во фото для слайдера
+    echo $count_files;
 ?>
 
 <!-- Main Bike Info -->
 <div class="conteiner">
     <div class="name_info_bike">
         <h1>
-            <?php $bike_main['name'] ?>
+            <?php echo $bike_main['name'] ?>
         </h1> 
     </div>
-    
-    <div class="image_info_bike">
-        <section class="photo__bike">
-            <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/main.jpg'?>" title="NAME" alt="NAME">
-        </section>
+
+<div class="container">
+    <div class="mySlides">
+        <div class="numbertext">i / <?php $count_files ?></div>
+        <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/main.jpg' ?>" style="width:100%">
     </div>
+
+    <?php for ($i = 1; $i <= $count_files; $i++){ ?>
+        <div class="mySlides">
+            <div class="numbertext"><?php echo $i . '/' . $count_files ?></div>
+            <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/' . $i . '.jpg' ?>" style="width:100%">
+        </div>
+    <?php }?>
+
+    <?php if($count_files): ?>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    <?php endif; ?>
+
+</div>
 
     <div class="main_info_bike">
         <!-- <h2 class="name-tech-spec">Характеристика</h2> -->
@@ -64,5 +81,35 @@
     </div>
 </div>
 
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+</script>
 
 <?php require_once("app/include/footer.php"); ?>
