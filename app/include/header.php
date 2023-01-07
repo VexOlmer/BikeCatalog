@@ -62,7 +62,7 @@
     <div class="conteiner">
         <div class="second-header">
             <span class="second-header-category">
-                Шоссейные велосипеды
+                <?php echo $name_sec_header; ?>
             </span>
             <div width="70%" align="right" class="second-header-history">
                     <a href="javascript:history.back();" class="goBack">
@@ -71,16 +71,15 @@
                         /
                     <a href="<?php echo BASE_URL . "Main.php"; ?>">
                         <span>Главная</span>
-                    </a> 
+                    </a>
+                    <?php if($see_ref_filter): ?>
                         / 
-                    <!-- <a href="#">
-                        <span>Велосипеды</span>
-                    </a> -->
-                    <span>Велосипеды</span>
-                        <!-- /
-                    <a href="#">
-                        <span>Название</span>
-                    </a>   -->
+                        <a href="<?php echo BASE_URL . "AllBike.php"; ?>">
+                            <span>Фильтр</span>
+                        </a>
+                    <?php endif; ?>
+                        /
+                    <span><?php echo $name_last_sec_header; ?></span>
                 </div>
         </div>
         <div class="line_wide"></div>

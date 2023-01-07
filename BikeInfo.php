@@ -1,10 +1,15 @@
 <?php 
 	require_once("config.php");
+    require_once("app/controllers/users.php"); 
+    require_once("app/controllers/tech_info_bike.php");
+
     $second_header = true;
     $login_css = false;
-    require_once("app/controllers/users.php"); 
+    $name_sec_header = 'Характеристика';
+    $see_ref_filter = true;
+    $name_last_sec_header = $bike_main['name'];
+    
 	require_once("app/include/header.php");
-    require_once("app/controllers/tech_info_bike.php");
 
     $count_column_info = count($table_tech);
 

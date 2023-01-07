@@ -2,6 +2,10 @@
     include("config.php");
     $second_header = true;
     $login_css = false;
+    $name_sec_header = 'Компании';
+    $see_ref_filter = false;
+    $name_last_sec_header = 'Компании';
+
     include("app/controllers/brands-info.php");
     include("app/include/header.php");
 ?>

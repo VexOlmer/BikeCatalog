@@ -2,6 +2,10 @@
     require_once("config.php");
     $second_header = true;
     $login_css = false;
+    $name_sec_header = 'Велосипеды';
+    $see_ref_filter = false;
+    $name_last_sec_header = 'Велосипеды';
+
     require_once("app/controllers/searchBike.php");
     require_once("app/controllers/favor-compr.php");
     require_once("app/include/header.php");
@@ -69,8 +73,11 @@
         <div class="content-AllBikes-main">
             <?php
                 if(empty($result)){
-                    echo 'Ни один велосипед не найден.';
-                }
+            ?>
+                    <h1 style="font-size: 30px; padding-top: 30px; padding-left: 250px;">
+                        Ни один велосипед не найден
+                    </h1> 
+            <?php   }
                 else{
                     foreach($result as $bike_info){
             ?>
