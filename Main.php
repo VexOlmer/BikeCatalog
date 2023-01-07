@@ -7,9 +7,7 @@
 ?>
 
 <div class="wrapper">
-    <!-- <h1 class="Perfect_bike">
-        Выбери идеальный велосипед
-    </h1> -->
+    
 </div>
 
 <div class="conteiner">

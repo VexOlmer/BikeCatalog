@@ -261,9 +261,9 @@ body{
     display: block;
     width: 100%;
     height: 80vh;
-    padding-bottom: 20px;
     background: url('../img/main_page/bike_background.jpg') no-repeat;
-    background-size: 100% 500px;
+    /* background-size: 100% auto; */
+    background-size: cover;
 }
 .card{
     background: #ffffff;
