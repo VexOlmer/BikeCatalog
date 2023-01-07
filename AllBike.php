@@ -26,7 +26,13 @@
 
                 <div class="list-group">
                     <!-- Название категории на русском -->
-                    <h3 class="name-filter-group"><?php echo $column_ru[$key] ?></h3>  
+                    <?php if($column_ru[$key] == 'Компания'): ?>
+                        <a href="<?php echo BASE_URL . 'BrandsInfo.php'?>" class="bikes-row-title">
+                            <h3 class="name-filter-group"><?php echo $column_ru[$key] ?></h3>
+                        </a>
+                    <?php else: ?>
+                        <h3 class="name-filter-group"><?php echo $column_ru[$key] ?></h3> 
+                    <?php endif; ?> 
                     <div class="brandSection">
                         <?php
                             $column_info = getColumn($table[$key], $column);
