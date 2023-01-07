@@ -17,7 +17,6 @@
     $kol_left -= 2;
 
     $count_files = count(scandir('static/img/bikes_db/' . $bike_main['name'])) - 3;  // Кол-во фото для слайдера
-    echo $count_files;
 ?>
 
 <!-- Main Bike Info -->
@@ -30,14 +29,12 @@
 
 <div class="container">
     <div class="mySlides">
-        <div class="numbertext">i / <?php $count_files ?></div>
-        <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/main.jpg' ?>" style="width:100%">
+        <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/main.jpg' ?>" class="photo_bike_info">
     </div>
 
     <?php for ($i = 1; $i <= $count_files; $i++){ ?>
         <div class="mySlides">
-            <div class="numbertext"><?php echo $i . '/' . $count_files ?></div>
-            <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/' . $i . '.jpg' ?>" style="width:100%">
+            <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/' . $i . '.jpg' ?>" class="photo_bike_info">
         </div>
     <?php }?>
 

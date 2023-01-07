@@ -34,7 +34,7 @@
                         ?>
                             <div class="checkbox">
                             <label>
-                                <?php if($info[$column] != ''): ?>
+                                <?php if($info[$column] != '-'): ?>
                                     <?php if(in_array($info[$column], $column_true_filter) or isset($_GET['category']) and $info[$column] === $_GET['category']): ?>
                                         <input type="checkbox" checked='checked' value="<?php echo $info[$column]; ?>" name="<?php echo $filter_column[$key]; ?>[]" >
                                     <?php else: ?>

@@ -1,18 +1,18 @@
-<nav role="pagination">
-    <ul class="pagination justify-content-center">
-        <li class="page-item">
-            <a class="page-link" href="?page=1">First</a>
-        </li>
-        <?php if($page > 1): ?>
-            <li class="page-item">
-                <a class="page-link" href="<?php echo "?page=".($page - 1);?>">Prev</a>
-            </li>
+<div class="pagination">
+    <?php if($page != 1): ?>
+        <a href="<?php echo "?page=". ($page - 1);?>">&laquo;</a>
+    <?php endif; ?>
+
+    <?php for($i=1; $i <= $total_pages; $i++){ 
+        if($i == $page):
+    ?>
+            <a class='active' href="<?php echo "?page=". $i;?>"><?php echo $i ?></a>
+        <?php else: ?>
+            <a href="<?php echo "?page=". $i;?>"><?php echo $i ?></a>
         <?php endif; ?>
-        <?php if($page < $total_pages): ?>
-        <li class="page-item">
-            <a class="page-link" href="<?php echo "?page=".($page + 1);?>">Next</a>
-        </li>
-        <?php endif; ?>
-        <li class="page-item"><a class="page-link" href="?page=<?php echo $total_pages; ?>">Last</a></li>
-    </ul>
-</nav>
+    <?php } ?>
+
+    <?php if($page != $total_pages): ?>
+        <a href="<?php echo "?page=". ($page + 1);?>">&raquo;</a>
+    <?php endif; ?>
+</div>
