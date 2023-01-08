@@ -9,6 +9,9 @@
     require_once("app/controllers/searchBike.php");
     require_once("app/controllers/favor-compr.php");
     require_once("app/include/header.php");
+
+    test($_GET);
+    test($_POST);
 ?>
 
 <div class="conteiner">
@@ -19,7 +22,7 @@
                 <h3>Сортировка</h3>
             </div> -->
 
-            <form action="AllBike.php" method="post">
+            <form action="AllBike.php" method="post" id="filter-form">
 
                 <?php
                     $filter_column = array("category", "type", "destination", "level", "season", "name_company");
@@ -65,8 +68,6 @@
                 <div class="button-search-drop">
                     <button class="button-drop-search" type="submit" name="btn-del-filter">Сбросить</button>
                 </div>
-
-            </form>
         </div>
         
         <!-- Main Content -->
@@ -105,17 +106,27 @@
                                     <?php echo $bike_info['season'] ?>
                                 </span>
                             </span>
-					</span> 
-                    <!-- <span class="bikes-row-checks">
-                        <span class="check">
-                            <input type="checkbox" id="compare2541121" value="1" onchange="compareClick(2541121);">
-                            <label for="compare2541121">к сравнению</label>
-                            <i>
-                            </i>
+					</span>
+
+                    <!-- Только если user авторизован -->
+                    <?php if (isset($_SESSION['id'])): ?>
+                        <span class="bikes-row-checks">
+                            <span class="check">
+                                <input type="checkbox" onclick=checkFluency(); id="comp" name="comp" value="<?php echo $bike_info['BIKE_ID'] ?>">
+                                <label>к сравнению</label>
+                                <i>
+
+                                </i>
+                            </span>
+                            <span class="check">
+                                <input type="checkbox" onclick=checkFluency(); id="favor" name="favor" value="<?php echo $bike_info['BIKE_ID'] ?>">
+                                <label>в избранное</label>
+                                <i>
+
+                                </i>
+                            </span>
                         </span>
-                        <span class="check"><input type="checkbox" id="notepad2541121" value="1" onchange="notepadClick(2541121, 'list');">
-                        <label for="notepad2541121">в избранное</label><i></i></span>
-                    </span> -->
+                    <?php endif; ?>
                 </span>
             </div>
             <?php } ?>
@@ -124,5 +135,15 @@
         </div>
     </div>
 </div>
+
+</form>
+
+<script>
+    function checkFluency(){
+    var checkbox = document.getElementById('comp');
+    let form  = document.getElementById('filter-form');
+    form.submit();
+}
+</script>
 
 <?php include("app/include/footer.php"); ?>
