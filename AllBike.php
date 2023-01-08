@@ -10,8 +10,6 @@
     require_once("app/controllers/favor-compr.php");
     require_once("app/include/header.php");
 
-    test($_GET);
-    test($_POST);
 ?>
 
 <div class="conteiner">
@@ -28,6 +26,7 @@
                     $filter_column = array("category", "type", "destination", "level", "season", "name_company");
                     $column_ru = array("Категория", "Тип", "Назначение", "Уровень оборудования", "Сезон", "Компания");
                     $table = array("bikeinfo", "bikeinfo", "bikeinfo", "bikeinfo", "bikeinfo", "brands");
+
                     foreach($filter_column as $key => $column){
                 ?>
 
@@ -80,6 +79,18 @@
                     </h1> 
             <?php   }
                 else{
+
+                    // $user_favor_comp = selectOne('favor_comp', array('ID' => $_SESSION['id']));
+                    // $i = 0;  // для итерации по сравнению/избранному
+
+                    // $user_favor = array();
+                    // $user_comp = array();
+
+                    // if ($user_favor_comp):
+                    //     $user_favor = explode(",", $user_favor_comp['favorites']);
+                    //     $user_comp = explode(",", $user_favor_comp['comparsion']);
+                    // endif;
+
                     foreach($result as $bike_info){
             ?>
             <div class="Bikes-row">
@@ -111,6 +122,17 @@
                     <!-- Только если user авторизован -->
                     <?php if (isset($_SESSION['id'])): ?>
                         <span class="bikes-row-checks">
+
+                        <!-- Сравнение -->
+                        <!-- <?php if (in_array($bike_info['BIKE_ID'], $user_comp)): ?>
+                            <span class="check">
+                                <input type="checkbox" checked=checked onclick=checkFluency(); id="comp" name="comp" value="<?php echo $bike_info['BIKE_ID'] ?>">
+                                <label>к сравнению</label>
+                                <i>
+
+                                </i>
+                            </span>
+                        <?php else: ?>
                             <span class="check">
                                 <input type="checkbox" onclick=checkFluency(); id="comp" name="comp" value="<?php echo $bike_info['BIKE_ID'] ?>">
                                 <label>к сравнению</label>
@@ -118,13 +140,20 @@
 
                                 </i>
                             </span>
+                        <?php endif; ?> -->
+
+                        <!-- Избранное -->
+                        <!-- <?php if (in_array($bike_info['BIKE_ID'], $user_favor)): ?>
+                            <span class="check">
+                                <input type="checkbox" checked=checked onclick=checkFluency(); id="favor" name="favor" value="<?php echo $bike_info['BIKE_ID'] ?>">
+                                <label>в избранное</label>
+                            </span>
+                        <?php else: ?>
                             <span class="check">
                                 <input type="checkbox" onclick=checkFluency(); id="favor" name="favor" value="<?php echo $bike_info['BIKE_ID'] ?>">
                                 <label>в избранное</label>
-                                <i>
-
-                                </i>
                             </span>
+                        <?php endif; ?> -->
                         </span>
                     <?php endif; ?>
                 </span>
@@ -140,7 +169,6 @@
 
 <script>
     function checkFluency(){
-    var checkbox = document.getElementById('comp');
     let form  = document.getElementById('filter-form');
     form.submit();
 }
