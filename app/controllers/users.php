@@ -8,7 +8,13 @@ function userAuth($user){
     $_SESSION['id'] = $user['USER_ID'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['admin'] = $user['admin'];
-    header('location: ' . BASE_URL . "Main.php");
+    $_SESSION['error'] = "";
+    if($_SESSION['admin']){
+        header('location: ' . BASE_URL . "admin/bikes/index.php");
+    }
+    else{
+        header('location: ' . BASE_URL . "Main.php");
+    }
 }
 
 // Регистрация

@@ -118,44 +118,6 @@
                                 </span>
                             </span>
 					</span>
-
-                    <!-- Только если user авторизован -->
-                    <?php if (isset($_SESSION['id'])): ?>
-                        <span class="bikes-row-checks">
-
-                        <!-- Сравнение -->
-                        <!-- <?php if (in_array($bike_info['BIKE_ID'], $user_comp)): ?>
-                            <span class="check">
-                                <input type="checkbox" checked=checked onclick=checkFluency(); id="comp" name="comp" value="<?php echo $bike_info['BIKE_ID'] ?>">
-                                <label>к сравнению</label>
-                                <i>
-
-                                </i>
-                            </span>
-                        <?php else: ?>
-                            <span class="check">
-                                <input type="checkbox" onclick=checkFluency(); id="comp" name="comp" value="<?php echo $bike_info['BIKE_ID'] ?>">
-                                <label>к сравнению</label>
-                                <i>
-
-                                </i>
-                            </span>
-                        <?php endif; ?> -->
-
-                        <!-- Избранное -->
-                        <!-- <?php if (in_array($bike_info['BIKE_ID'], $user_favor)): ?>
-                            <span class="check">
-                                <input type="checkbox" checked=checked onclick=checkFluency(); id="favor" name="favor" value="<?php echo $bike_info['BIKE_ID'] ?>">
-                                <label>в избранное</label>
-                            </span>
-                        <?php else: ?>
-                            <span class="check">
-                                <input type="checkbox" onclick=checkFluency(); id="favor" name="favor" value="<?php echo $bike_info['BIKE_ID'] ?>">
-                                <label>в избранное</label>
-                            </span>
-                        <?php endif; ?> -->
-                        </span>
-                    <?php endif; ?>
                 </span>
             </div>
             <?php } ?>

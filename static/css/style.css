@@ -159,6 +159,9 @@ body{
 }
 .text-end{
     text-align: right;
+    font-size: 150%;
+
+    color:#FFF50D;
 }
 .header-login{
     cursor: pointer;
