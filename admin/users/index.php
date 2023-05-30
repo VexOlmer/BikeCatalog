@@ -54,11 +54,11 @@
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="<?php echo BASE_URL . "admin/users/edit.php?id=" . $user['USER_ID'];?>">edit</a>
+                                    <a style="color:blue; font-size:20px" href="<?php echo BASE_URL . "admin/users/edit.php?id=" . $user['USER_ID'];?>">edit</a>
                                     
                                     <!-- Сам себя admin удалить не может -->
                                     <?php if ($_SESSION['id'] != $user['USER_ID']): ?>
-                                        <a href="<?php echo BASE_URL . "admin/users/index.php?delete_id=" . $user['USER_ID'];?>">delete</a>
+                                        <a style="color:red; font-size:20px" href="<?php echo BASE_URL . "admin/users/index.php?delete_id=" . $user['USER_ID'];?>">delete</a>
                                     <?php endif; ?>
                                 </td>
                             </tr>

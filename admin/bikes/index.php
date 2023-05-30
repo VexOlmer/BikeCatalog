@@ -56,12 +56,12 @@
                                 <td><?=$bike['level']; ?></td>
                                 <td><?=$bike['season']; ?></td>
                                 <td>
-                                    <a href="<?php echo BASE_URL . "admin/bikes/edit.php?id=" . $bike['BIKE_ID'];?>">edit</a>
-                                    <a href="<?php echo BASE_URL . "admin/bikes/index.php?delete_id=" . $bike['BIKE_ID'];?>">delete</a>
+                                    <a style="color:blue; font-size:20px" href="<?php echo BASE_URL . "admin/bikes/edit.php?id=" . $bike['BIKE_ID'];?>">edit</a>
+                                    <a style="color:red; font-size:20px" href="<?php echo BASE_URL . "admin/bikes/index.php?delete_id=" . $bike['BIKE_ID'];?>">delete</a>
                                     <?php if($bike['status']): ?>
-                                        <a href="<?php echo BASE_URL . "admin/bikes/index.php?publish_id=" . $bike['BIKE_ID'];?>">unpublish</a>
+                                        <a style="color:green; font-size:20px" href="<?php echo BASE_URL . "admin/bikes/index.php?publish_id=" . $bike['BIKE_ID'];?>">unpublish</a>
                                     <?php else: ?>
-                                        <a href="<?php echo BASE_URL . "admin/bikes/index.php?publish_id=" . $bike['BIKE_ID'];?>">publish</a>
+                                        <a style="color:green; font-size:20px" href="<?php echo BASE_URL . "admin/bikes/index.php?publish_id=" . $bike['BIKE_ID'];?>">publish</a>
                                     <?php endif; ?>
                                 </td>
                             </tr>

@@ -3,8 +3,6 @@
     include("../../app/database/db.php");
     include("../../app/include/header_admin.php");
     include("../../app/controllers/users_admin.php");
-
-    test($_GET);
 ?>
 
 <div class="conteiner">
@@ -21,7 +19,7 @@
 
             </div>
             <div class="row title-table">
-                <h2>Добавление пользователя</h2>
+                <h2 style="margin-bottom: 20px">Редактирование пользователя <?=$username;?></h2>
 
                 <div class="posts-error">
                     <p><?=$errMsg;?></p>

@@ -42,8 +42,8 @@
                                 <td><?=$brand['name_company']; ?></td>
                                 <td><?=mb_substr($brand['description_company'], 0, 50, 'UTF-8'). '...'  ?></td>
                                 <td>
-                                    <a href="<?php echo BASE_URL . "admin/brands/edit.php?id=" . $brand['BRANDS_ID'];?>">edit</a>
-                                    <a href="<?php echo BASE_URL . "admin/brands/index.php?delete_id=" . $brand['BRANDS_ID'];?>">delete</a>
+                                    <a style="color:blue; font-size:20px" href="<?php echo BASE_URL . "admin/brands/edit.php?id=" . $brand['BRANDS_ID'];?>">edit</a>
+                                    <a style="color:red; font-size:20px" href="<?php echo BASE_URL . "admin/brands/index.php?delete_id=" . $brand['BRANDS_ID'];?>">delete</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

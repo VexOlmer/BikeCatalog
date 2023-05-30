@@ -21,7 +21,7 @@
 
             <form action="edit.php" method="post" enctype="multipart/form-data">
             <div class="row title-table">
-                <h2>Велосипеды</h2>
+                <h2 style="margin-bottom: 20px">Редактирование велосипеда <?=$bike_edit['name']?></h2>
 
                 <div class="posts-error">
                     <p><?=$errMsg;?></p>

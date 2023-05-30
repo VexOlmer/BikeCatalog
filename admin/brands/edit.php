@@ -3,8 +3,6 @@
     include("../../app/database/db.php");
     include("../../app/include/header_admin.php");
     include("../../app/controllers/brands_admin.php");
-
-    test($_GET);
 ?>
 
 <div class="conteiner">
@@ -21,7 +19,7 @@
 
             </div>
             <div class="row title-table">
-                <h2>Редактирование записи</h2>
+                <h2 style="margin-bottom: 20px">Редактирование компании <?=$name;?></h2>
 
                 <div class="posts-error">
                     <p><?=$errMsg;?></p>
@@ -40,10 +38,10 @@
                         <textarea name="desc" class="form-control" rows="20" cols="125"><?=$desc;?></textarea>
                     </div>
 
-                    <div>
+                    <!-- <div>
                         <label class="form-label">Эмблема компании</label>
                         <input name="img" type="file" class="form-control">
-                    </div>
+                    </div> -->
 
                     <div style="padding-top: 30px">
                         <button name="edit_brand" class="button-search" type="submit">Обновить</button>
