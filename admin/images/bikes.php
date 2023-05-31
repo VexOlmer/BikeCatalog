@@ -56,7 +56,7 @@
                                 <td><?=$bike['level']; ?></td>
                                 <td><?=$bike['season']; ?></td>
                                 <td>
-                                    <a style="color:blue; font-size:20px" href="<?php echo BASE_URL . "admin/images/edit.php?id=" . $bike['BIKE_ID'];?>">edit</a>
+                                    <a style="color:blue; font-size:20px" href="<?php echo BASE_URL . "admin/images/bikes_edit.php?id_bike=" . $bike['BIKE_ID'];?>">edit</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
