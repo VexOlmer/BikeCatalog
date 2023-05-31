@@ -32,23 +32,23 @@
         </h1> 
     </div>
 
-<div class="container">
-    <div class="mySlides">
-        <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/main.jpg' ?>" class="photo_bike_info">
-    </div>
-
-    <?php for ($i = 1; $i <= $count_files; $i++){ ?>
+    <div class="container">
         <div class="mySlides">
-            <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/' . $i . '.jpg' ?>" class="photo_bike_info">
+            <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/main.jpg' ?>" class="photo_bike_info">
         </div>
-    <?php }?>
 
-    <?php if($count_files): ?>
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-    <?php endif; ?>
+        <?php for ($i = 1; $i <= $count_files; $i++){ ?>
+            <div class="mySlides">
+                <img src="<?php echo "static/img/bikes_db/" . $bike_main['name'] . '/' . $i . '.jpg' ?>" class="photo_bike_info">
+            </div>
+        <?php }?>
 
-</div>
+        <?php if($count_files): ?>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        <?php endif; ?>
+
+    </div>
 
     <div class="main_info_bike">
         <!-- <h2 class="name-tech-spec">Характеристика</h2> -->
