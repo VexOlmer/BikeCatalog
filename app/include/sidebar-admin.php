@@ -9,5 +9,8 @@
         <li>
             <a href="<?php echo BASE_URL . "admin/users/index.php";?>">Пользователи</a>
         </li>
+        <li>
+            <a href="<?php echo BASE_URL . "admin/images/bikes.php";?>">Изображения</a>
+        </li>
     </ul>
 </div>
