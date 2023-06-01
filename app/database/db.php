@@ -121,6 +121,8 @@ function update($table, $id, $params){
     global $pdo;
     $i = 0;
     $str = '';
+    $name_id = $params['ID'];
+    unset($params['ID']);
 
     foreach ($params as $key => $value) {
         if ($i === 0){
@@ -131,17 +133,17 @@ function update($table, $id, $params){
         $i++;
     }
 
-    $sql = "UPDATE $table SET $str WHERE ID = $id";
+    $sql = "UPDATE $table SET $str WHERE $name_id = $id";
     $query = $pdo->prepare($sql);
     $query->execute();
     dbCheckError($query);
 }
 
 // Удаление строки в таблице
-function delete($table, $id){
+function delete($table, $id, $name_ID){
     global $pdo;
 
-    $sql = "DELETE FROM $table WHERE ID = $id";
+    $sql = "DELETE FROM $table WHERE $name_ID = $id";
     $query = $pdo->prepare($sql);
     $query->execute();
     dbCheckError($query);

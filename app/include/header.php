@@ -41,12 +41,19 @@
                 <?php endif; ?>
 
                 <div class="text-end">
-                    <?php if (isset($_SESSION['id'])): ?>
-                        <a href="#">
+                    <?php if (isset($_SESSION['id']) and ($_SESSION['admin'] == 1)): ?>
+                        <a href="<?php echo BASE_URL . 'admin/bikes/index.php' ?>" style="color:#FFF50D; font-size: 100%;">
                             <?php echo $_SESSION['username']; ?>
                         </a>
                         <ul>
-                            <li><a href="<?php echo BASE_URL . "Logout.php"; ?>">Выход</a> </li>
+                            <li><a style="color:#FFF50D; font-size: 100%;" href="<?php echo BASE_URL . "Logout.php"; ?>">Выход</a> </li>
+                        </ul>
+                    <?php elseif (isset($_SESSION['id']) and ($_SESSION['admin'] == 0)): ?>
+                        <a href="#" style="color:#FFF50D; font-size: 100%;">
+                            <?php echo $_SESSION['username']; ?>
+                        </a>
+                        <ul>
+                            <li><a style="color:#FFF50D; font-size: 100%;" href="<?php echo BASE_URL . "Logout.php"; ?>">Выход</a> </li>
                         </ul>
                     <?php else: ?>
                             <a href="<?php echo BASE_URL . "Login.php"; ?>" class="header-sign">Войти</a>
